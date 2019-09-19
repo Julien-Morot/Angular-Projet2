@@ -9,7 +9,11 @@ export class ProductsService {
   uri = 'http://localhost:4000/products';
 
   constructor(private http: HttpClient) { }
-
+  getProducts() {
+    return this
+           .http
+           .get(`${this.uri}`);
+  }
   addProduct(ProductName, ProductDescription, ProductPrice) {
     const obj = {
       ProductName,
